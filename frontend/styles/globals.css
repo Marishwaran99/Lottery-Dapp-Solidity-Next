@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&family=Work+Sans:wght@400;500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+#__next {
+  min-height: 100vh;
+  @apply flex flex-col;
+}
+body {
+  min-height: 100vh;
+}
+input,
+textarea {
+  @apply outline-none border-2 rounded border-black p-2 block w-full;
+}
+label {
+  @apply font-semibold text-sm;
+}
+
+.btn {
+  @apply text-base font-bold  py-2.5 px-6 cursor-pointer uppercase bg-yellow-200 rounded  flex items-center justify-center space-x-4;
+}
+.shadow-border {
+  border: 3px solid black;
+  box-shadow: 4px 4px black;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  transform: scale(1.01);
+}
+
+.error {
+  margin-top: 36px;
+  padding: 12px 8px;
+  color: red;
+  font-weight: 500;
+  transition: opacity 0.15s;
+}
+
+form {
+  display: flex;
+}
+
+.toast {
+  @apply hidden fixed z-10 pt-28 left-0 top-0 w-full h-full overflow-auto bg-black bg-opacity-5;
+}
+.toast.active {
+  @apply block;
+}
+.toast-content {
+  @apply relative mx-auto py-3 px-2 flex items-center font-medium border-2 border-black w-fit;
+  box-shadow: 4px 4px black;
+  animation-name: animatetop;
+  color: black;
+  animation-duration: 0.4s;
+}
+.toast-content.success {
+  background-color: lightgreen;
+}
+
+.toast-content.error {
+  background-color: lightpink;
+}
+.dismiss-btn {
+  @apply ml-4 border-2 border-black bg-white text-2xl font-bold leading-none w-8 h-8;
+  box-shadow: 4px 4px;
+}
+
+.detail p {
+  @apply text-center p-4 text-xl font-bold;
+}
+
+td,
+th {
+  @apply border-2 border-black p-2 bg-white;
+}
+td {
+  @apply font-semibold text-lg;
+}
+
+.toast-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.loader {
+  @apply w-5 h-5 border-4 border-gray-400 border-t-4 border-t-black rounded-full animate-spin;
+}
+
+.one-word-per-line {
+  word-spacing: 999px;
+}
+
+.admin__controls-card {
+  @apply border rounded flex flex-col items-center text-sm sm:text-base p-4 justify-center text-center space-y-4 font-medium cursor-pointer;
+}
